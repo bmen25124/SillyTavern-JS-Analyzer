@@ -1,0 +1,39 @@
+{
+    "name": "typescript-web-project",
+    "version": "1.0.0",
+    "description": "A web application using pure JS and SCSS.",
+    "main": "dist/index.js",
+    "type": "commonjs",
+    "scripts": {
+        "dev": "cross-env NODE_ENV=development webpack --mode development --watch",
+        "build": "cross-env NODE_ENV=production webpack --mode production",
+        "prettify": "prettier --write \"src/**/*.ts\"",
+        "test": "jest",
+        "test:watch": "jest --watch"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "MIT",
+    "devDependencies": {
+        "@eslint/js": "^9.17.0",
+        "@types/express": "^5.0.0",
+        "@types/jest": "^29.5.14",
+        "@types/node": "^24.0.0",
+        "@types/write-file-atomic": "^4.0.3",
+        "cross-env": "^7.0.3",
+        "jest": "^30.0.0",
+        "prettier": "^3.5.3",
+        "terser-webpack-plugin": "^5.3.11",
+        "ts-jest": "^29.3.4",
+        "ts-loader": "^9.5.1",
+        "typescript": "^5.7.2",
+        "typescript-eslint": "^8.18.2",
+        "utf-8-validate": "^5.0.10",
+        "webpack": "^5.97.1",
+        "webpack-cli": "^6.0.1"
+    },
+    "dependencies": {
+        "tree-sitter": "^0.21.1",
+        "tree-sitter-javascript": "^0.21.4"
+    }
+}
