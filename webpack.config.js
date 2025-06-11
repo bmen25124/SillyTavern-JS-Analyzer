@@ -11,6 +11,10 @@ const serverConfig = {
         libraryTarget: 'commonjs',
         libraryExport: 'default',
     },
+    externals: {
+        'tree-sitter': 'commonjs tree-sitter',
+        'tree-sitter-javascript': 'commonjs tree-sitter-javascript',
+    },
     resolve: {
         extensions: ['.ts', '.js'],
     },
