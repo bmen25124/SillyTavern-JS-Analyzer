@@ -335,8 +335,6 @@ export class JavaScriptSecurityAnalyzer {
       'location.href',
       'document.cookie',
       'document.domain',
-      'innerHTML',
-      'outerHTML',
     ];
     return dangerousAssignments.some((dangerous) => target.includes(dangerous));
   }

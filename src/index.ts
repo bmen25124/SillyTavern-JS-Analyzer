@@ -4,10 +4,7 @@ import { JavaScriptSecurityAnalyzer, SecurityAnalysisResult } from './util';
 const ID = 'js-security';
 
 async function init(router: Router): Promise<void> {
-  const analyzer = new JavaScriptSecurityAnalyzer();
 
-  // Add JSON parsing middleware for our routes
-  router.use(json());
 
   // Security analysis endpoint
   // @ts-ignore
@@ -20,6 +17,8 @@ async function init(router: Router): Promise<void> {
           error: 'Missing or invalid "code" parameter. Expected a string.',
         });
       }
+
+      const analyzer = new JavaScriptSecurityAnalyzer();
 
       // Update analyzer settings if provided
       if (settings && typeof settings === 'object') {
