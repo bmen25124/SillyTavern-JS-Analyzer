@@ -1,6 +1,6 @@
 A server plugin for [SillyTavern](https://docs.sillytavern.app/). It makes a idiomatic analysis of JavaScript code to detect potentially dangerous operations, such as network requests, eval calls, and other unsafe APIs. It can also sanitize the code by removing or commenting out dangerous parts.
 
-This is not a full-fledged JavaScript interpreter like [SandboxJS](https://github.com/nyariv/SandboxJS). It uses [tree-sitter](https://tree-sitter.github.io/tree-sitter/) to parse JavaScript code and analyze its structure. If you have a more complex use case, use something else.
+> This is not a full-fledged JavaScript interpreter like [SandboxJS](https://github.com/nyariv/SandboxJS). It uses [tree-sitter](https://tree-sitter.github.io/tree-sitter/) to parse JavaScript code and analyze its structure. If you have a more complex use case, use something else.
 
 
 ## Installation
