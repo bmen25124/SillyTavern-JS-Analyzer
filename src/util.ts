@@ -19,7 +19,6 @@ export interface SecurityAnalysisResult {
  * JavaScript Security Analyzer using Tree-sitter
  */
 interface SecuritySettings {
-  enableJSAnalysis: boolean;
   allowedAPIs: string[];
   blockedAPIs: string[];
   maxScriptLength: number;
@@ -39,7 +38,6 @@ export class JavaScriptSecurityAnalyzer {
 
     // Default settings
     this.settings = {
-      enableJSAnalysis: true,
       allowedAPIs: ['console', 'Math', 'Date', 'JSON', 'parseInt', 'parseFloat', 'isNaN', 'isFinite'],
       blockedAPIs: ['fetch', 'XMLHttpRequest', 'eval', 'Function', 'WebSocket', 'localStorage', 'sessionStorage'],
       maxScriptLength: 50000,
@@ -103,11 +101,6 @@ export class JavaScriptSecurityAnalyzer {
     const violations: SecurityViolation[] = [];
 
     try {
-      // Skip analysis if disabled
-      if (!this.settings.enableJSAnalysis) {
-        return { safe: true, violations: [], sanitizedCode: code };
-      }
-
       // Basic length check
       if (code.length > this.settings.maxScriptLength) {
         violations.push({

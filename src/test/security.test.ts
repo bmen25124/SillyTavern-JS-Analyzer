@@ -229,18 +229,6 @@ describe('JavaScriptSecurityAnalyzer', () => {
   });
 
   describe('Configuration Options', () => {
-    test('should respect disabled analysis', () => {
-      const disabledAnalyzer = new JavaScriptSecurityAnalyzer({
-        enableJSAnalysis: false,
-      });
-      const code = `fetch('/dangerous/url'); eval('bad code');`;
-      const result = disabledAnalyzer.analyzeScript(code);
-
-      expect(result.safe).toBe(true);
-      expect(result.violations).toHaveLength(0);
-      expect(result.sanitizedCode).toBe(code);
-    });
-
     test('should respect custom blocked APIs', () => {
       const customAnalyzer = new JavaScriptSecurityAnalyzer({
         blockedAPIs: ['customAPI', 'anotherDangerousFunction'],
@@ -258,11 +246,6 @@ describe('JavaScriptSecurityAnalyzer', () => {
       // Initially should block fetch
       let result = analyzer.analyzeScript(code);
       expect(result.safe).toBe(false);
-
-      // Update settings to disable analysis
-      analyzer.updateSettings({ enableJSAnalysis: false });
-      result = analyzer.analyzeScript(code);
-      expect(result.safe).toBe(true);
     });
   });
 

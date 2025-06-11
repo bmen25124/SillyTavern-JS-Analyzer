@@ -4,8 +4,6 @@ import { JavaScriptSecurityAnalyzer, SecurityAnalysisResult } from './util';
 const ID = 'js-security';
 
 async function init(router: Router): Promise<void> {
-
-
   // Security analysis endpoint
   // @ts-ignore
   router.post('/analyze', (request: Request, response: Response) => {
