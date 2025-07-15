@@ -11,7 +11,8 @@ git clone https://github.com/bmen25124/SillyTavern-JS-Analyzer
 ```
 
 2. Set `enableServerPlugins: true` in `{SillyTavern_Folder}/config.yaml`.
-3. Restart the server.
+3. Run `npm install` in the plugin folder to install `tree-sitter`
+4. Restart the server.
 
 ## Usage
 
